@@ -6,17 +6,22 @@ import HomePage from "./panets/HomePage";
 import AboutPage from "./panets/AboutPage";
 import ContactPage from "./panets/ContactPage";
 import FaqPage from "./panets/FaqPage";
+import data from "./starter-code/data.json";
 
+console.log(data);
 import "./App.css";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="about" element={<AboutPage />} />
-      <Route path="contact" element={<ContactPage />} />
-      <Route path="fac" element={<FaqPage />} />
-    </Routes>
+    <div className="App">
+      <div>hello Dolly</div>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="about" element={<AboutPage />} />
+        <Route path="contact" element={<ContactPage />} />
+        <Route path="faq" element={<FaqPage />} />
+      </Routes>
+    </div>
   );
 }
 
