@@ -9,7 +9,7 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: #070724;
-  background-image: url(../starter-code/starter-code/assets/background-stars.svg);
+  background-image: url(./starter-code/assets/background-stars.svg);
   color: white;
   /* font-family: 'Antonio', sans-serif;
   font-family: 'League Spartan', sans-serif; */

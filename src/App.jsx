@@ -1,25 +1,31 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link, Navigate } from "react-router-dom";
 import HomePage from "./panets/HomePage";
-import AboutPage from "./panets/AboutPage";
-import ContactPage from "./panets/ContactPage";
-import FaqPage from "./panets/FaqPage";
-import data from "./starter-code/data.json";
+import Planents from "./panets/Planents";
 
-console.log(data);
+import planetData from "./starter-code/data.json";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <div>hello Dolly</div>
+      <header>
+        <nav>
+          <ul>
+            {planetData.map((planet) => (
+              <li key={planet.name}>
+                <Link to={`/planets/${planet.name}`}>{planet.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </header>
+
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="about" element={<AboutPage />} />
-        <Route path="contact" element={<ContactPage />} />
-        <Route path="faq" element={<FaqPage />} />
+        <Route path="/" element={<Navigate to="/planets/mercury" />} />
+        <Route path="/planets/:name" element={Planents} />
       </Routes>
     </div>
   );
