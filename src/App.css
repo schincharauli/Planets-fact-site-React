@@ -9,8 +9,40 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: #070724;
-  background-image: url(./starter-code/assets/background-stars.svg);
+  background-image: url(./public/assets/background-stars.svg);
   color: white;
   /* font-family: 'Antonio', sans-serif;
   font-family: 'League Spartan', sans-serif; */
+}
+
+.App h1 {
+  font-size: 28px;
+  font-family: "Antonio", sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.App header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.App ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.App a {
+  color: #ffffff;
+  padding: 30px;
+}
+
+/* .App li {
+  marker: none;
+} */
+
+.nav-planet-names {
+  display: flex;
+  text-decoration: none;
+  outline: none;
 }

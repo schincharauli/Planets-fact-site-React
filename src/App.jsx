@@ -1,21 +1,21 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import { Routes, Route, Link, Navigate } from "react-router-dom";
 import HomePage from "./panets/HomePage";
 import Planents from "./panets/Planents";
 
-import planetData from "./starter-code/data.json";
+import planetData from "./data.json";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <header>
+        <h1>the planets</h1>
         <nav>
           <ul>
             {planetData.map((planet) => (
-              <li key={planet.name}>
+              <li className="nav-planet-names" key={planet.name}>
                 <Link to={`/planets/${planet.name}`}>{planet.name}</Link>
               </li>
             ))}
@@ -24,8 +24,8 @@ function App() {
       </header>
 
       <Routes>
-        <Route path="/" element={<Navigate to="/planets/mercury" />} />
-        <Route path="/planets/:name" element={Planents} />
+        <Route path="/" element={<Navigate to="/planets/Mercury" />} />
+        <Route path="/planets/:name" element={<Planents />} />
       </Routes>
     </div>
   );
