@@ -1,0 +1,21 @@
+/* * {
+  background-color: yellow;
+} */
+
+/* .planet-menu {
+  display: block;
+} */
+
+.planet-menu {
+  display: none;
+}
+
+.planet-menu-item {
+  display: none;
+}
+
+@media (min-width: 990px) {
+  .planet-menu {
+    display: none;
+  }
+}

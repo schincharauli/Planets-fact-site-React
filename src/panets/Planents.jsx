@@ -33,6 +33,7 @@ export default function Planets() {
         alt={planet.name}
       />
       <p>{planet.overview.content}</p>
+
       <p>
         Source:{" "}
         <a href={planet.geology.source} target="_blank" rel="noreferrer">
@@ -49,6 +50,10 @@ export default function Planets() {
       >
         Show planet
       </button>
+      <p>ROTATION TIME {planet.rotation}</p>
+      <p>REVOLUTION TIME {planet.revolution}</p>
+      <p>RADIUS {planet.radius}</p>
+      <p>AVERAGE TEMP {planet.temperature}</p>
     </div>
   );
 }
