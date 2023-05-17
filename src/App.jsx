@@ -25,7 +25,7 @@ function App() {
     setShowPlanets(menuOpen);
   };
 
-  const isMobile = windowWidth < 1000;
+  const isMobile = windowWidth <= 768;
 
   return (
     <div className="App">
@@ -39,9 +39,9 @@ function App() {
             </button>
           )}
         </div>
-        <div className="hr"></div>
-        {menuOpen && <PlanetMenu toggleMenu={toggleMenu} />}
 
+        {menuOpen && <PlanetMenu toggleMenu={toggleMenu} />}
+        <div className="hr"></div>
         <nav style={{ display: isMobile ? "none" : "block" }}>
           <ul>
             {planetData.map((planet) => (

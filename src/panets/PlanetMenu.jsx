@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import planetData from "../data.json";
 import style from "./PlanetMenu.css";
 
-function PlanetMenu({ toggleMenu }) {
+function PlanetMenu({ toggleMenu, selectedPlanetName }) {
   const getCircleColor = (name) => {
     const colorMap = {
       Mercury: "#DEF4FC",

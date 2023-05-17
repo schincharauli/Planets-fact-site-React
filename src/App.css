@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Antonio&family=League+Spartan:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Antonio&family=League+Spartan:wght@400&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -25,6 +25,45 @@ body {
 h2 {
   font-size: 40px;
   font-family: "Antonio", sans-serif;
+  margin-top: 70px;
+  text-transform: uppercase;
+}
+.overview {
+  margin-top: 20px;
+  font-family: "League Spartan", sans-serif;
+  color: #838391;
+}
+
+.source {
+  margin-top: 24px;
+  display: flex;
+  font-family: "League Spartan", sans-serif;
+  font-size: 14px;
+  line-height: 25px;
+  color: #afabab;
+  opacity: 0.5;
+}
+
+.details {
+  height: 48px;
+  width: 327px;
+  border: 1px solid #464646;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-top: 8px;
+}
+
+.txt {
+  font-family: "League Spartan", sans-serif;
+  font-size: 12px;
+  color: #838391;
+}
+.desc {
+  font-family: "Antonio", sans-serif;
+  font-size: 20px;
 }
 
 .logo-and-burger-mobile {
@@ -43,16 +82,9 @@ h2 {
 
 .burger-menu {
   position: relative;
-  /* margin-left: 300px; */
   background: none;
   border: none;
 }
-
-/* nav {
-  width: 100%;
-  height: auto;
-  margin-top: 200px;
-} */
 
 .list {
   display: flex;
@@ -72,59 +104,229 @@ h2 {
   outline: none;
 }
 
-.planet {
+.buttons {
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 24px;
+  margin-top: 20px;
 }
+
+.horizontal {
+  margin-top: 16px;
+  width: 100%;
+  height: 1px;
+  background-color: #ffffff;
+  opacity: 0.2;
+}
+
+.active-color {
+  height: 4px;
+  width: 80px;
+}
+
 .planet img {
   width: 111px;
   height: 111px;
   justify-content: center;
+  position: absolute;
+  margin-top: -300px;
 }
 
 span {
   display: none;
 }
 
-.buttons {
-  display: flex;
-  justify-content: space-around;
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
 .buttons > button {
   outline: none;
   border: none;
   background-color: transparent;
-  color: #ffffff;
+  color: #bdb7b7;
   gap: 20px;
+  text-transform: uppercase;
+}
+
+.buttons > button:hover {
+  color: #ffffff;
+}
+
+.section-two {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.section-two img {
+  margin-top: -361px;
+}
+
+.tablet-design {
+  padding-left: 24px;
+  margin-top: 220px;
+}
+
+.tablet-size-boxes {
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media (min-width: 768px) {
+  .tablet-design {
+    padding-left: 24px;
+    margin-top: 0;
+  }
+  .hr {
+    display: none;
+  }
+
   span {
     display: block;
   }
-}
 
-@media (min-width: 990px) {
-  .App header {
+  .nav-planet-names {
     display: flex;
-    justify-content: space-around;
+  }
+
+  h1 {
+    margin: auto;
+  }
+
+  .App header {
+    align-items: center;
   }
 
   .App ul {
     display: flex;
     justify-content: space-between;
+    padding: 24px;
   }
 
   .App a {
     color: #ffffff;
-    padding: 30px;
+    padding: 10px;
+  }
+  .planet img {
+    width: 253px;
+    height: 253px;
+    justify-content: center;
+    margin-top: -550px;
   }
 
-  .planet-menu {
+  .tablet-design {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: flex-start;
+  }
+
+  h2 {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .overview {
+    text-align: left;
+  }
+
+  .source {
+    display: flex;
+    align-items: center;
+  }
+
+  .buttons button {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 24px;
+    padding-right: 24px;
+    align-items: center;
+    height: 40px;
+    width: 281px;
+    border: 1px solid #bdb7b7;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .horizontal {
     display: none;
+  }
+  .section-one {
+    margin-top: 400px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .tablet-size-boxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 1080px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .planet img {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    margin-left: -400px;
+    margin-top: -750px;
+  }
+  .section-one {
+    margin: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    margin-left: 629px;
+    margin-bottom: 344px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+  }
+  .tablet-design {
+    margin-top: 100px;
+    display: flex;
+    justify-content: flex-end;
+    /* width: 40%; */
+  }
+
+  .buttons button {
+    height: 48px;
+    width: 350px;
+  }
+  .buttons {
+    padding: auto;
+    margin-left: -100px;
+  }
+
+  .details {
+    height: 128px;
+    width: 255px;
+  }
+
+  .box-one-tablet-size,
+  .box-two-tablet-size {
+    display: flex;
+    gap: 30px;
+  }
+  .tablet-size-boxes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: -170px;
   }
 }

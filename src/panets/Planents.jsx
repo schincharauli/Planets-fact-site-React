@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import planetData from "../data.json";
+import PlanetMenu from "./PlanetMenu";
 import "../App.css";
 
 export default function Planets() {
@@ -26,54 +27,104 @@ export default function Planets() {
     setShowInternalImage(false);
   };
 
-  const isMediumScreen = (windowWidth) => 375 && windowWidth <= 768;
+  const isMediumScreen = windowWidth >= 375 && windowWidth <= 768;
 
   return (
     <div className="planet">
-      <div className="buttons">
-        <button
-          onClick={() => {
-            setShowInternalImage(false);
-            setShowGeologyImage(false);
-          }}
-        >
-          <span>01</span>
-          OVERVIEW
-        </button>
+      <div className="section-one">
+        <div className="buttons">
+          <button
+            onClick={() => {
+              setShowInternalImage(false);
+              setShowGeologyImage(false);
+            }}
+          >
+            <span>01</span>
+            OVERVIEW
+          </button>
+          <div
+            className="active-color"
+            style={{
+              backgroundColor: planet.color,
+              height: "4px",
+              width: "80px",
+            }}
+          ></div>
 
-        <button onClick={handleInternalClick}>
-          <span>02</span>
-          {isMediumScreen ? "Structure" : "Internal Structure"}
-        </button>
-        <button onClick={handleGeologyClick}>
-          <span>03</span>
-          {isMediumScreen ? "Surface" : "Surface Geology"}
-        </button>
+          <button onClick={handleInternalClick}>
+            <span>02</span>
+            {isMediumScreen ? "Structure" : "Internal Structure"}
+          </button>
+          <div
+            className="active-color"
+            style={{
+              backgroundColor: planet.color,
+              height: "4px",
+              width: "80px",
+            }}
+          ></div>
+          <button onClick={handleGeologyClick}>
+            <span>03</span>
+            {isMediumScreen ? "Surface" : "Surface Geology"}
+          </button>
+          <div
+            className="active-color"
+            style={{
+              backgroundColor: planet.color,
+              height: "4px",
+              width: "80px",
+            }}
+          ></div>
+        </div>
+        <div className="tablet-design">
+          <h2>{planet.name}</h2>
+          <p className="overview">{planet.overview.content}</p>
+
+          <p className="source">
+            Source:{" "}
+            <a href={planet.geology.source} target="_blank" rel="noreferrer">
+              <p> Wikipedia</p>
+            </a>
+          </p>
+        </div>
       </div>
-      <img
-        src={
-          showGeologyImage
-            ? planet.images.geology
-            : showInternalImage
-            ? planet.images.internal
-            : planet.images.planet
-        }
-        alt={planet.name}
-      />
-      <h2>{planet.name}</h2>
-      <p>{planet.overview.content}</p>
+      {/* <div className="horizontal"></div> */}
 
-      <p>
-        Source:{" "}
-        <a href={planet.geology.source} target="_blank" rel="noreferrer">
-          Wikipedia
-        </a>
-      </p>
+      <div className="section-two">
+        <img
+          src={
+            showGeologyImage
+              ? planet.images.geology
+              : showInternalImage
+              ? planet.images.planet && planet.images.internal
+              : planet.images.planet
+          }
+          alt={planet.name}
+        />
+      </div>
+      <div className="tablet-size-boxes">
+        <div className="box-one-tablet-size">
+          <div className="details">
+            <p className="txt">ROTATION TIME </p>
+            <p className="desc">{planet.rotation}</p>
+          </div>
+          <div className="details">
+            <p className="txt">REVOLUTION TIME </p>
+            <p className="desc">{planet.revolution}</p>
+          </div>
+        </div>
 
-      <p>ROTATION TIME {planet.rotation}</p>
-      <p>REVOLUTION TIME {planet.revolution}</p>
-      <p>RADIUS {planet.radius}</p>
-      <p>AVERAGE TEMP {planet.temperature}</p>
+        <div className="box-two-tablet-size">
+          <div className="details">
+            <p className="txt">RADIUS </p>
+            <p className="desc"> {planet.radius}</p>
+          </div>
+          <div className="details">
+            <p className="txt">AVERAGE TEMP </p>
+            <p className="desc">{planet.temperature}</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
