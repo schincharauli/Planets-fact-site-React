@@ -37,24 +37,18 @@ body {
 }
 
 .burger-menu {
-  position: fixed;
-  margin-left: 300px;
+  position: relative;
+  /* margin-left: 300px; */
   background: none;
   border: none;
 }
 
-.logo-and-burger-mobile > ul {
-  list-style-type: none;
-}
+/* nav {
+  width: 100%;
+  height: auto;
+  margin-top: 200px;
+} */
 
-.logo-and-burger-mobile a:link,
-.logo-and-burger-mobile a:visited {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #ffffff;
-  font-family: "League Spartan", sans-serif;
-  font-weight: 700;
-}
 .list {
   display: flex;
   gap: 24px;

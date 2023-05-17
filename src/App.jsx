@@ -12,6 +12,7 @@ import "./App.css";
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [showPlanets, setShowPlanets] = useState(true);
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -21,6 +22,7 @@ function App() {
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+    setShowPlanets(menuOpen);
   };
 
   const isMobile = windowWidth < 1000;
@@ -36,8 +38,8 @@ function App() {
               <img src={hamburgerIcon} alt="Menu" />
             </button>
           )}
-          {menuOpen && <PlanetMenu />}
         </div>
+        {menuOpen && <PlanetMenu />}
 
         <div className="hr"></div>
 
@@ -45,17 +47,26 @@ function App() {
           <ul>
             {planetData.map((planet) => (
               <li className="nav-planet-names" key={planet.name}>
-                <Link to={`/planets/${planet.name}`}>{planet.name}</Link>
+                <Link
+                  to={`/planets/${planet.name}`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {planet.name}
+                </Link>
               </li>
             ))}
           </ul>
         </nav>
       </header>
 
-      <Routes>
-        <Route path="/" element={<Navigate to="/planets/Mercury" />} />
-        <Route path="/planets/:name" element={<Planents />} />
-      </Routes>
+      {showPlanets && (
+        <div>
+          <Routes>
+            <Route path="/" element={<Navigate to="/planets/Mercury" />} />
+            <Route path="/planets/:name" element={<Planents />} />
+          </Routes>
+        </div>
+      )}
     </div>
   );
 }

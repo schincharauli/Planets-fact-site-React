@@ -16,3 +16,28 @@
     display: none;
   }
 } */
+/* ul {
+  background-color: aliceblue;
+  padding-top: 100px;
+} */
+
+ul {
+  list-style-type: none;
+}
+
+.list {
+  width: 100%;
+  height: auto;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+}

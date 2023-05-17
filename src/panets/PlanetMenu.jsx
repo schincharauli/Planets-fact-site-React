@@ -19,21 +19,25 @@ function PlanetMenu({ toggleMenu }) {
   };
 
   return (
-    <ul className={style["planet-menu"]}>
-      {planetData.map((planet) => (
-        <div className="list">
-          <div
-            className="planet-color-circles"
-            style={{ background: getCircleColor(planet.name) }}
-          ></div>
-          <li className={style["planet-menu-item"]} key={planet.name}>
-            <Link to={`/planets/${planet.name}`} onClick={toggleMenu}>
-              {planet.name}
-            </Link>
-          </li>
-        </div>
-      ))}
-    </ul>
+    <>
+      <ul className={style["planet-menu"]}>
+        {planetData.map((planet) => (
+          <div className="list">
+            <div
+              className="planet-color-circles"
+              style={{ background: getCircleColor(planet.name) }}
+            ></div>
+
+            <li className={style["planet-menu-item"]} key={planet.name}>
+              <Link to={`/planets/${planet.name}`} onClick={toggleMenu}>
+                {planet.name}
+              </Link>
+            </li>
+          </div>
+        ))}
+        {/* <div className="hr"></div> */}
+      </ul>
+    </>
   );
 }
 
