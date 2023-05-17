@@ -160,6 +160,7 @@ span {
 
 .section-two img {
   margin-top: -361px;
+  margin-left: -70px;
 }
 
 .tablet-design {
@@ -172,6 +173,13 @@ span {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.section-two .geology-image {
+  margin-top: -280px;
+  /* margin-right: 40px; */
+  width: 50px;
+  height: 50px;
 }
 
 @media (min-width: 768px) {
@@ -272,6 +280,12 @@ span {
     padding-left: 24px;
     padding-right: 24px;
   }
+
+  .section-two .geology-image {
+    margin-top: -350px;
+    width: 100px;
+    height: 100px;
+  }
 }
 
 @media (min-width: 1080px) {
@@ -295,6 +309,7 @@ span {
     margin-bottom: 344px;
     align-items: flex-end;
     flex-wrap: wrap;
+    padding-left: 50px;
   }
   .tablet-design {
     margin-top: 100px;
@@ -328,5 +343,10 @@ span {
     justify-content: center;
     gap: 30px;
     margin-top: -170px;
+  }
+  .section-two .geology-image {
+    margin-top: -450px;
+    width: 200px;
+    height: 200px;
   }
 }

@@ -88,24 +88,38 @@ export default function Planets() {
           </p>
         </div>
       </div>
-      {/* <div className="horizontal"></div> */}
 
       <div className="section-two">
-        <img
-          src={
-            showGeologyImage
-              ? planet.images.geology
-              : showInternalImage
-              ? planet.images.planet && planet.images.internal
-              : planet.images.planet
-          }
-          alt={planet.name}
-        />
+        <div className="planet-image-container">
+          <img
+            className={`planet-image ${
+              showGeologyImage ? "show-geology" : ""
+            } ${showInternalImage ? "show-internal" : ""}`}
+            src={planet.images.planet}
+            alt={planet.name}
+          />
+          {showGeologyImage && (
+            <img
+              className="geology-image"
+              src={planet.images.geology}
+              alt={`${planet.name} geology`}
+            />
+          )}
+          {showInternalImage && (
+            <img
+              className="internal-image"
+              src={planet.images.internal}
+              alt={`${planet.name} internal structure`}
+            />
+          )}
+        </div>
       </div>
+
       <div className="tablet-size-boxes">
         <div className="box-one-tablet-size">
           <div className="details">
             <p className="txt">ROTATION TIME </p>
+
             <p className="desc">{planet.rotation}</p>
           </div>
           <div className="details">
