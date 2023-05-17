@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import planetData from "../data.json";
 import "../App.css";
@@ -8,6 +8,13 @@ export default function Planets() {
   const planet = planetData.find((planet) => planet.name === name);
   const [showInternalImage, setShowInternalImage] = useState(false);
   const [showGeologyImage, setShowGeologyImage] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleInternalClick = () => {
     setShowInternalImage(!showInternalImage);
@@ -19,9 +26,30 @@ export default function Planets() {
     setShowInternalImage(false);
   };
 
+  const isMediumScreen = (windowWidth) => 375 && windowWidth <= 768;
+
   return (
     <div className="planet">
-      <h2>{planet.name}</h2>
+      <div className="buttons">
+        <button
+          onClick={() => {
+            setShowInternalImage(false);
+            setShowGeologyImage(false);
+          }}
+        >
+          <span>01</span>
+          OVERVIEW
+        </button>
+
+        <button onClick={handleInternalClick}>
+          <span>02</span>
+          {isMediumScreen ? "Structure" : "Internal Structure"}
+        </button>
+        <button onClick={handleGeologyClick}>
+          <span>03</span>
+          {isMediumScreen ? "Surface" : "Surface Geology"}
+        </button>
+      </div>
       <img
         src={
           showGeologyImage
@@ -32,6 +60,7 @@ export default function Planets() {
         }
         alt={planet.name}
       />
+      <h2>{planet.name}</h2>
       <p>{planet.overview.content}</p>
 
       <p>
@@ -40,24 +69,6 @@ export default function Planets() {
           Wikipedia
         </a>
       </p>
-      <button
-        onClick={() => {
-          setShowInternalImage(false);
-          setShowGeologyImage(false);
-        }}
-      >
-        <span>01</span>
-        OVERVIEW
-      </button>
-
-      <button onClick={handleInternalClick}>
-        <span>02</span>
-        Internal Structure
-      </button>
-      <button onClick={handleGeologyClick}>
-        <span>03</span>
-        Surface Geology
-      </button>
 
       <p>ROTATION TIME {planet.rotation}</p>
       <p>REVOLUTION TIME {planet.revolution}</p>

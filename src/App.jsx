@@ -39,9 +39,8 @@ function App() {
             </button>
           )}
         </div>
-        {menuOpen && <PlanetMenu />}
-
         <div className="hr"></div>
+        {menuOpen && <PlanetMenu toggleMenu={toggleMenu} />}
 
         <nav style={{ display: isMobile ? "none" : "block" }}>
           <ul>

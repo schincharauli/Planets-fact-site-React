@@ -22,6 +22,11 @@ body {
   text-transform: uppercase;
 }
 
+h2 {
+  font-size: 40px;
+  font-family: "Antonio", sans-serif;
+}
+
 .logo-and-burger-mobile {
   display: flex;
   justify-content: space-between;
@@ -67,7 +72,40 @@ body {
   outline: none;
 }
 
+.planet {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.planet img {
+  width: 111px;
+  height: 111px;
+  justify-content: center;
+}
+
+span {
+  display: none;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.buttons > button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: #ffffff;
+  gap: 20px;
+}
+
 @media (min-width: 768px) {
+  span {
+    display: block;
+  }
 }
 
 @media (min-width: 990px) {
