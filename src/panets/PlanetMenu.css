@@ -1,17 +1,14 @@
-/* * {
-  background-color: yellow;
-} */
-
-/* .planet-menu {
-  display: block;
-} */
-
 .planet-menu {
-  display: none;
+  display: block;
 }
 
 .planet-menu-item {
   display: none;
+}
+
+.planet-menu-item {
+  display: flex;
+  flex-direction: column;
 }
 
 @media (min-width: 990px) {

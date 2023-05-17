@@ -28,14 +28,18 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>the planets</h1>
+        <div className="logo-and-burger-mobile">
+          <h1>the planets</h1>
 
-        {isMobile && (
-          <button className="burger-menu" onClick={toggleMenu}>
-            <img src={hamburgerIcon} alt="Menu" />
-          </button>
-        )}
-        {menuOpen && <PlanetMenu />}
+          {isMobile && (
+            <button className="burger-menu" onClick={toggleMenu}>
+              <img src={hamburgerIcon} alt="Menu" />
+            </button>
+          )}
+          {menuOpen && <PlanetMenu />}
+        </div>
+
+        <div className="hr"></div>
 
         <nav style={{ display: isMobile ? "none" : "block" }}>
           <ul>

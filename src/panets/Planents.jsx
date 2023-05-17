@@ -40,16 +40,25 @@ export default function Planets() {
           Wikipedia
         </a>
       </p>
-      <button onClick={handleInternalClick}>Internal Structure</button>
-      <button onClick={handleGeologyClick}>Surface Geology</button>
       <button
         onClick={() => {
           setShowInternalImage(false);
           setShowGeologyImage(false);
         }}
       >
-        Show planet
+        <span>01</span>
+        OVERVIEW
       </button>
+
+      <button onClick={handleInternalClick}>
+        <span>02</span>
+        Internal Structure
+      </button>
+      <button onClick={handleGeologyClick}>
+        <span>03</span>
+        Surface Geology
+      </button>
+
       <p>ROTATION TIME {planet.rotation}</p>
       <p>REVOLUTION TIME {planet.revolution}</p>
       <p>RADIUS {planet.radius}</p>
