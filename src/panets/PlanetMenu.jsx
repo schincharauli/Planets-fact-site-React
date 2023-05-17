@@ -3,14 +3,35 @@ import planetData from "../data.json";
 import style from "./PlanetMenu.css";
 
 function PlanetMenu({ toggleMenu }) {
+  const getCircleColor = (name) => {
+    const colorMap = {
+      Mercury: "#DEF4FC",
+      Venus: "#F7CC7F",
+      Earth: "#545BFE",
+      Mars: "#FF6A45",
+      Jupiter: "#ECAD7A",
+      Saturn: "#FCCB6B",
+      Uranus: "#65F0D5",
+      Neptune: "#497EFA",
+    };
+
+    return colorMap[name] || "gray";
+  };
+
   return (
     <ul className={style["planet-menu"]}>
       {planetData.map((planet) => (
-        <li className={style["planet-menu-item"]} key={planet.name}>
-          <Link to={`/planets/${planet.name}`} onClick={toggleMenu}>
-            {planet.name}
-          </Link>
-        </li>
+        <div className="list">
+          <div
+            className="planet-color-circles"
+            style={{ background: getCircleColor(planet.name) }}
+          ></div>
+          <li className={style["planet-menu-item"]} key={planet.name}>
+            <Link to={`/planets/${planet.name}`} onClick={toggleMenu}>
+              {planet.name}
+            </Link>
+          </li>
+        </div>
       ))}
     </ul>
   );
